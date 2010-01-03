@@ -1,0 +1,9 @@
+This is a VERY simple broadcaster for JQuery. An example:
+
+ $("#listening_element").register("new_message", function(_, data) {
+    $(this).html(data);
+   });
+
+ $.get("/url", { success: function(data) { $.broadcast("new_message", data); } });
+ 
+This is nice because you can set up number of elements on the page to listen for arbitrary updates. Anyway, it's only a few lines of code but it makes things a bit easier to deal with on my end. If there's a better solution out there I'd love to know about it.
