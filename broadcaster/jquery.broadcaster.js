@@ -32,7 +32,7 @@
  */
    $.broadcast = function(evt, data) {
      evt = $.Broadcaster.namespace + "." + evt;
-     $.each($._subscribers[evt], function() {
+     $.each(($._subscribers[evt] || []), function() {
 	      this.trigger(evt, data);
 	    });
    };

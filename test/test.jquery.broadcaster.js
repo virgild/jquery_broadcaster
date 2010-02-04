@@ -19,3 +19,8 @@ test("namespaces an event", function(){
 	 $.broadcast("click");
 	 ok(happened, "we still have our event");
 });
+
+test("doesn't throw a hissy fit when there are no listeners", function() {
+	 $.broadcast("arbitrary");
+	 ok(true, "if we made it here, we're in the clear");
+});
